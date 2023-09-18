@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_flutter_state/pages/useFuture_page.dart';
+import 'package:hooks_flutter_state/pages/useListenable_page.dart';
 import 'package:hooks_flutter_state/pages/useState_page.dart';
 import 'package:hooks_flutter_state/pages/useStream_page.dart';
 
@@ -26,7 +27,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/useStream-page': (context) => const UseStreamPage(),
         '/useState-page': (context) => const UseStatePage(),
-        '/useFuture-page': (context) => const UseFuturePage()
+        '/useFuture-page': (context) => const UseFuturePage(),
+        '/useListenable-page': (context) => const UseListenablePage(),
       },
     );
   }
@@ -63,6 +65,12 @@ class HomePage extends StatelessWidget {
                 Navigator.of(context).pushNamed('/useFuture-page');
               },
               child: const Text('UseFuture Page'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed('/useListenable-page');
+              },
+              child: const Text('UseListenable Page'),
             ),
           ],
         ),
