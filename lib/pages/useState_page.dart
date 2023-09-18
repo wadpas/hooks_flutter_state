@@ -37,7 +37,7 @@ class UseStatePage extends HookWidget {
             onPressed: () {
               Navigator.of(context).pop();
             },
-            child: const Text("Back"),
+            child: const Text("< Back"),
           )
         ],
       ),

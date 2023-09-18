@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hooks_flutter_state/pages/useFuture_page.dart';
 import 'package:hooks_flutter_state/pages/useState_page.dart';
 import 'package:hooks_flutter_state/pages/useStream_page.dart';
 
@@ -25,18 +26,10 @@ class MyApp extends StatelessWidget {
       routes: {
         '/useStream-page': (context) => const UseStreamPage(),
         '/useState-page': (context) => const UseStatePage(),
+        '/useFuture-page': (context) => const UseFuturePage()
       },
     );
   }
-}
-
-extension CompactMap<T> on Iterable<T?> {
-  Iterable<T> compactMap<E>([
-    E? Function(T?)? transform,
-  ]) =>
-      map(
-        transform ?? (e) => e,
-      ).where((e) => e != null).cast();
 }
 
 class HomePage extends StatelessWidget {
@@ -65,11 +58,11 @@ class HomePage extends StatelessWidget {
               },
               child: const Text('UseState Page'),
             ),
-            TextButton(
+            ElevatedButton(
               onPressed: () {
-                Navigator.of(context).pushNamed('/inherited-widget');
+                Navigator.of(context).pushNamed('/useFuture-page');
               },
-              child: const Text('Inherited Widget'),
+              child: const Text('UseFuture Page'),
             ),
           ],
         ),
