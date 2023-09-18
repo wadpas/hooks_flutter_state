@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hooks_flutter_state/pages/seconds_page.dart';
+import 'package:hooks_flutter_state/pages/useState_page.dart';
+import 'package:hooks_flutter_state/pages/useStream_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,20 +16,21 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Hooks',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepPurple,
+          seedColor: Colors.yellowAccent,
         ),
         useMaterial3: true,
         textTheme: GoogleFonts.poppinsTextTheme(),
       ),
       home: const HomePage(),
       routes: {
-        '/seconds-page': (context) => const SecondsPage(),
+        '/useStream-page': (context) => const UseStreamPage(),
+        '/useState-page': (context) => const UseStatePage(),
       },
     );
   }
 }
 
-class HomePage extends HookWidget {
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
@@ -41,19 +42,19 @@ class HomePage extends HookWidget {
       body: SizedBox(
         width: double.maxFinite,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).pushNamed('/seconds-page');
+                Navigator.of(context).pushNamed('/useStream-page');
               },
-              child: const Text('Seconds Page'),
+              child: const Text('UseStream Page'),
             ),
-            TextButton(
+            ElevatedButton(
               onPressed: () {
-                Navigator.of(context).pushNamed('/inherited-notifier');
+                Navigator.of(context).pushNamed('/useState-page');
               },
-              child: const Text('Inherited Notifier'),
+              child: const Text('UseState Page'),
             ),
             TextButton(
               onPressed: () {
