@@ -4,6 +4,7 @@ import 'package:hooks_flutter_state/pages/useFuture_page.dart';
 import 'package:hooks_flutter_state/pages/useListenable_page.dart';
 import 'package:hooks_flutter_state/pages/useScrollController_page.dart';
 import 'package:hooks_flutter_state/pages/useState_page.dart';
+import 'package:hooks_flutter_state/pages/useStreamController_page.dart';
 import 'package:hooks_flutter_state/pages/useStream_page.dart';
 
 void main() {
@@ -40,6 +41,8 @@ class MyApp extends StatelessWidget {
         '/useListenable-page': (context) => const UseListenablePage(),
         '/useScrollController-page': (context) =>
             const UseScrollControllerPage(),
+        '/useStreamController-page': (context) =>
+            const UseStreamControllerPage()
       },
     );
   }
@@ -88,6 +91,12 @@ class HomePage extends StatelessWidget {
                 Navigator.of(context).pushNamed('/useScrollController-page');
               },
               child: const Text('UseScrollController Page'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed('/useStreamController-page');
+              },
+              child: const Text('UseStreamController Page'),
             ),
           ],
         ),

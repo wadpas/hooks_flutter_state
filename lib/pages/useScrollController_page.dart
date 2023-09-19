@@ -69,11 +69,14 @@ class UseScrollControllerPage extends HookWidget {
               },
             ),
           ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            child: const Text("< Back"),
+          Container(
+            margin: const EdgeInsets.all(8),
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text("< Back"),
+            ),
           )
         ],
       ),
