@@ -41,9 +41,6 @@ class UseListenablePage extends HookWidget {
           children: [
             Text(
               notifier.value.toString(),
-              style: const TextStyle(
-                fontSize: 20,
-              ),
             ),
             ElevatedButton(
               onPressed: () {

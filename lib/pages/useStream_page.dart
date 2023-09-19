@@ -25,9 +25,6 @@ class UseStreamPage extends HookWidget {
               dateTime.data == null
                   ? 'No time'
                   : dateTime.data!.substring(0, 19),
-              style: const TextStyle(
-                fontSize: 20,
-              ),
             ),
             ElevatedButton(
               onPressed: () {

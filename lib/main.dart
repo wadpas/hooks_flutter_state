@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_flutter_state/pages/useFuture_page.dart';
 import 'package:hooks_flutter_state/pages/useListenable_page.dart';
+import 'package:hooks_flutter_state/pages/useScrollController_page.dart';
 import 'package:hooks_flutter_state/pages/useState_page.dart';
 import 'package:hooks_flutter_state/pages/useStream_page.dart';
 
@@ -21,7 +22,15 @@ class MyApp extends StatelessWidget {
           seedColor: Colors.yellowAccent,
         ),
         useMaterial3: true,
-        textTheme: GoogleFonts.poppinsTextTheme(),
+        textTheme: GoogleFonts.poppinsTextTheme().copyWith(
+          bodyMedium: const TextStyle(
+            color: Colors.black,
+            fontSize: 20,
+          ),
+          labelLarge: const TextStyle(
+            fontSize: 17,
+          ),
+        ),
       ),
       home: const HomePage(),
       routes: {
@@ -29,6 +38,8 @@ class MyApp extends StatelessWidget {
         '/useState-page': (context) => const UseStatePage(),
         '/useFuture-page': (context) => const UseFuturePage(),
         '/useListenable-page': (context) => const UseListenablePage(),
+        '/useScrollController-page': (context) =>
+            const UseScrollControllerPage(),
       },
     );
   }
@@ -71,6 +82,12 @@ class HomePage extends StatelessWidget {
                 Navigator.of(context).pushNamed('/useListenable-page');
               },
               child: const Text('UseListenable Page'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed('/useScrollController-page');
+              },
+              child: const Text('UseScrollController Page'),
             ),
           ],
         ),

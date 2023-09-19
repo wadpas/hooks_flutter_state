@@ -29,9 +29,6 @@ class UseStatePage extends HookWidget {
           ),
           Text(
             'Text is: ${text.value}',
-            style: const TextStyle(
-              fontSize: 20,
-            ),
           ),
           ElevatedButton(
             onPressed: () {
