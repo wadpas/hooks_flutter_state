@@ -19,7 +19,6 @@ class UseStreamPage extends HookWidget {
       body: SizedBox(
         width: double.infinity,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               dateTime.data == null

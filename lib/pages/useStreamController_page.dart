@@ -22,7 +22,6 @@ class UseStreamControllerPage extends HookWidget {
       body: SizedBox(
         width: double.infinity,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             StreamBuilder<Object>(
                 stream: controller.stream,
@@ -37,7 +36,16 @@ class UseStreamControllerPage extends HookWidget {
                       },
                       child: RotationTransition(
                         turns: AlwaysStoppedAnimation(rotation / 360.0),
-                        child: Image.network(url),
+                        child: Image.network(
+                          url,
+                          loadingBuilder: (BuildContext context, Widget child,
+                              ImageChunkEvent? loadingProgress) {
+                            if (loadingProgress == null) return child;
+                            return const Center(
+                              child: CircularProgressIndicator(),
+                            );
+                          },
+                        ),
                       ),
                     );
                   }

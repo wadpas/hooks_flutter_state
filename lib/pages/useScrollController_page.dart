@@ -43,7 +43,6 @@ class UseScrollControllerPage extends HookWidget {
         title: const Text('UseScrollController Page'),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizeTransition(
             sizeFactor: size,
@@ -55,6 +54,13 @@ class UseScrollControllerPage extends HookWidget {
                 url,
                 height: imageHeight,
                 fit: BoxFit.cover,
+                loadingBuilder: (BuildContext context, Widget child,
+                    ImageChunkEvent? loadingProgress) {
+                  if (loadingProgress == null) return child;
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                },
               ),
             ),
           ),

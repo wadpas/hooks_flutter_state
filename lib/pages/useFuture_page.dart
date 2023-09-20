@@ -16,24 +16,29 @@ const url =
 
 class UseFuturePage extends HookWidget {
   const UseFuturePage({super.key});
-
   @override
   Widget build(BuildContext context) {
-    final future = useMemoized(() => NetworkAssetBundle(Uri.parse(url))
-        .load(url)
-        .then((data) => data.buffer.asUint8List())
-        .then((data) => Image.memory(data)));
+    final future = useMemoized(
+      () => NetworkAssetBundle(Uri.parse(url))
+          .load(url)
+          .then((data) => data.buffer.asUint8List())
+          .then((data) => Image.memory(data)),
+    );
 
     final snapshot = useFuture(future);
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('UseState Page'),
+        title: const Text('UseFuture Page'),
       ),
       body: SizedBox(
         width: double.infinity,
         child: Column(
           children: [
+            if (snapshot.data == null)
+              const Center(
+                child: CircularProgressIndicator(),
+              ),
             Column(
               children: [snapshot.data].compactMap().toList(),
             ),

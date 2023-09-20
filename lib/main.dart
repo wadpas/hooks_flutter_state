@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_flutter_state/pages/useFuture_page.dart';
 import 'package:hooks_flutter_state/pages/useListenable_page.dart';
+import 'package:hooks_flutter_state/pages/useReducer_page.dart';
 import 'package:hooks_flutter_state/pages/useScrollController_page.dart';
 import 'package:hooks_flutter_state/pages/useState_page.dart';
 import 'package:hooks_flutter_state/pages/useStreamController_page.dart';
@@ -42,7 +43,8 @@ class MyApp extends StatelessWidget {
         '/useScrollController-page': (context) =>
             const UseScrollControllerPage(),
         '/useStreamController-page': (context) =>
-            const UseStreamControllerPage()
+            const UseStreamControllerPage(),
+        '/useReducer-page': (context) => const UseReducerPage()
       },
     );
   }
@@ -57,10 +59,13 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Flutter Hooks'),
       ),
-      body: SizedBox(
+      body: Container(
         width: double.maxFinite,
+        padding: const EdgeInsets.symmetric(
+          vertical: 10,
+          horizontal: 5,
+        ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
               onPressed: () {
@@ -97,6 +102,12 @@ class HomePage extends StatelessWidget {
                 Navigator.of(context).pushNamed('/useStreamController-page');
               },
               child: const Text('UseStreamController Page'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed('/useReducer-page');
+              },
+              child: const Text('UseReducer Page'),
             ),
           ],
         ),

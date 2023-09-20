@@ -19,7 +19,6 @@ class UseStatePage extends HookWidget {
         title: const Text('UseState Page'),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
             margin: const EdgeInsets.all(8),

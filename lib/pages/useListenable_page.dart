@@ -37,7 +37,6 @@ class UseListenablePage extends HookWidget {
       body: SizedBox(
         width: double.infinity,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               notifier.value.toString(),
