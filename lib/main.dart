@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hooks_flutter_state/pages/useAppLifecycleState_page.dart';
 import 'package:hooks_flutter_state/pages/useFuture_page.dart';
 import 'package:hooks_flutter_state/pages/useListenable_page.dart';
 import 'package:hooks_flutter_state/pages/useReducer_page.dart';
@@ -44,7 +45,9 @@ class MyApp extends StatelessWidget {
             const UseScrollControllerPage(),
         '/useStreamController-page': (context) =>
             const UseStreamControllerPage(),
-        '/useReducer-page': (context) => const UseReducerPage()
+        '/useReducer-page': (context) => const UseReducerPage(),
+        '/useAppLifecycleState-page': (context) =>
+            const UseAppLifecycleStatePage()
       },
     );
   }
@@ -108,6 +111,12 @@ class HomePage extends StatelessWidget {
                 Navigator.of(context).pushNamed('/useReducer-page');
               },
               child: const Text('UseReducer Page'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed('/useAppLifecycleState-page');
+              },
+              child: const Text('UseAppLifecycleState Page'),
             ),
           ],
         ),
