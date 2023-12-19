@@ -69,7 +69,7 @@ class UseReducerPage extends HookWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('UseReducer Page'),
+        title: const Text('UseReducer'),
       ),
       body: Column(
         children: [
@@ -120,15 +120,6 @@ class UseReducerPage extends HookWidget {
               ),
             ),
           ),
-          Container(
-            margin: const EdgeInsets.all(8),
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: const Text("< Back"),
-            ),
-          )
         ],
       ),
     );

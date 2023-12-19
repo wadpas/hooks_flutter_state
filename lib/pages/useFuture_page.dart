@@ -29,7 +29,7 @@ class UseFuturePage extends HookWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('UseFuture Page'),
+        title: const Text('UseFuture'),
       ),
       body: SizedBox(
         width: double.infinity,
@@ -42,15 +42,6 @@ class UseFuturePage extends HookWidget {
             Column(
               children: [snapshot.data].compactMap().toList(),
             ),
-            Container(
-              margin: const EdgeInsets.all(8),
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                child: const Text("< Back"),
-              ),
-            )
           ],
         ),
       ),

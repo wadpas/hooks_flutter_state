@@ -32,7 +32,7 @@ class UseListenablePage extends HookWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('UseListenable Page'),
+        title: const Text('UseListenable'),
       ),
       body: SizedBox(
         width: double.infinity,
@@ -41,12 +41,6 @@ class UseListenablePage extends HookWidget {
             Text(
               notifier.value.toString(),
             ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: const Text("< Back"),
-            )
           ],
         ),
       ),

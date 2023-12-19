@@ -12,7 +12,7 @@ class UseAppLifecycleStatePage extends HookWidget {
     final state = useAppLifecycleState();
     return Scaffold(
       appBar: AppBar(
-        title: const Text('UseAppLifecycleState Page'),
+        title: const Text('UseAppLifecycleState'),
       ),
       body: Opacity(
         opacity: state == AppLifecycleState.resumed ? 1.0 : 0.0,

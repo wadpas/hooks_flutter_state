@@ -16,7 +16,7 @@ class UseStatePage extends HookWidget {
     }, [controller]);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('UseState Page'),
+        title: const Text('UseState'),
       ),
       body: Column(
         children: [
@@ -29,12 +29,6 @@ class UseStatePage extends HookWidget {
           Text(
             'Text is: ${text.value}',
           ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            child: const Text("< Back"),
-          )
         ],
       ),
     );

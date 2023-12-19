@@ -14,7 +14,7 @@ class UseStreamPage extends HookWidget {
     final dateTime = useStream(getTime());
     return Scaffold(
       appBar: AppBar(
-        title: const Text('UseStream Page'),
+        title: const Text('UseStream'),
       ),
       body: SizedBox(
         width: double.infinity,
@@ -25,12 +25,6 @@ class UseStreamPage extends HookWidget {
                   ? 'No time'
                   : dateTime.data!.substring(0, 19),
             ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: const Text("< Back"),
-            )
           ],
         ),
       ),

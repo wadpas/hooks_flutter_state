@@ -17,48 +17,40 @@ class UseStreamControllerPage extends HookWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('UseStreamController Page'),
+        title: const Text('UseStreamController'),
       ),
       body: SizedBox(
         width: double.infinity,
         child: Column(
           children: [
             StreamBuilder<Object>(
-                stream: controller.stream,
-                builder: (context, snapshot) {
-                  if (!snapshot.hasData) {
-                    return const CircularProgressIndicator();
-                  } else {
-                    final rotation = snapshot.data as double;
-                    return GestureDetector(
-                      onTap: () {
-                        controller.sink.add(rotation + 10.0);
-                      },
-                      child: RotationTransition(
-                        turns: AlwaysStoppedAnimation(rotation / 360.0),
-                        child: Image.network(
-                          url,
-                          loadingBuilder: (BuildContext context, Widget child,
-                              ImageChunkEvent? loadingProgress) {
-                            if (loadingProgress == null) return child;
-                            return const Center(
-                              child: CircularProgressIndicator(),
-                            );
-                          },
-                        ),
+              stream: controller.stream,
+              builder: (context, snapshot) {
+                if (!snapshot.hasData) {
+                  return const CircularProgressIndicator();
+                } else {
+                  final rotation = snapshot.data as double;
+                  return GestureDetector(
+                    onTap: () {
+                      controller.sink.add(rotation + 10.0);
+                    },
+                    child: RotationTransition(
+                      turns: AlwaysStoppedAnimation(rotation / 360.0),
+                      child: Image.network(
+                        url,
+                        loadingBuilder: (BuildContext context, Widget child,
+                            ImageChunkEvent? loadingProgress) {
+                          if (loadingProgress == null) return child;
+                          return const Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        },
                       ),
-                    );
-                  }
-                }),
-            Container(
-              margin: const EdgeInsets.all(8),
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                child: const Text("< Back"),
-              ),
-            )
+                    ),
+                  );
+                }
+              },
+            ),
           ],
         ),
       ),

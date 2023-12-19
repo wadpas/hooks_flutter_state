@@ -40,7 +40,7 @@ class UseScrollControllerPage extends HookWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('UseScrollController Page'),
+        title: const Text('UseScrollController'),
       ),
       body: Column(
         children: [
@@ -75,15 +75,6 @@ class UseScrollControllerPage extends HookWidget {
               },
             ),
           ),
-          Container(
-            margin: const EdgeInsets.all(8),
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: const Text("< Back"),
-            ),
-          )
         ],
       ),
     );

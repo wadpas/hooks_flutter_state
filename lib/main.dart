@@ -37,17 +37,14 @@ class MyApp extends StatelessWidget {
       ),
       home: const HomePage(),
       routes: {
-        '/useStream-page': (context) => const UseStreamPage(),
-        '/useState-page': (context) => const UseStatePage(),
-        '/useFuture-page': (context) => const UseFuturePage(),
-        '/useListenable-page': (context) => const UseListenablePage(),
-        '/useScrollController-page': (context) =>
-            const UseScrollControllerPage(),
-        '/useStreamController-page': (context) =>
-            const UseStreamControllerPage(),
-        '/useReducer-page': (context) => const UseReducerPage(),
-        '/useAppLifecycleState-page': (context) =>
-            const UseAppLifecycleStatePage()
+        '/useStream': (context) => const UseStreamPage(),
+        '/useState': (context) => const UseStatePage(),
+        '/useFuture': (context) => const UseFuturePage(),
+        '/useListenable': (context) => const UseListenablePage(),
+        '/useScrollController': (context) => const UseScrollControllerPage(),
+        '/useStreamController': (context) => const UseStreamControllerPage(),
+        '/useReducer': (context) => const UseReducerPage(),
+        '/useAppLifecycleState': (context) => const UseAppLifecycleStatePage()
       },
     );
   }
@@ -70,53 +67,53 @@ class HomePage extends StatelessWidget {
         ),
         child: Column(
           children: [
-            ElevatedButton(
+            TextButton(
               onPressed: () {
-                Navigator.of(context).pushNamed('/useStream-page');
+                Navigator.of(context).pushNamed('/useStream');
               },
-              child: const Text('UseStream Page'),
+              child: const Text('UseStream'),
             ),
-            ElevatedButton(
+            TextButton(
               onPressed: () {
-                Navigator.of(context).pushNamed('/useState-page');
+                Navigator.of(context).pushNamed('/useState');
               },
-              child: const Text('UseState Page'),
+              child: const Text('UseState'),
             ),
-            ElevatedButton(
+            TextButton(
               onPressed: () {
-                Navigator.of(context).pushNamed('/useFuture-page');
+                Navigator.of(context).pushNamed('/useFuture');
               },
-              child: const Text('UseFuture Page'),
+              child: const Text('UseFuture'),
             ),
-            ElevatedButton(
+            TextButton(
               onPressed: () {
-                Navigator.of(context).pushNamed('/useListenable-page');
+                Navigator.of(context).pushNamed('/useListenable');
               },
-              child: const Text('UseListenable Page'),
+              child: const Text('UseListenable'),
             ),
-            ElevatedButton(
+            TextButton(
               onPressed: () {
-                Navigator.of(context).pushNamed('/useScrollController-page');
+                Navigator.of(context).pushNamed('/useScrollController');
               },
-              child: const Text('UseScrollController Page'),
+              child: const Text('UseScrollController'),
             ),
-            ElevatedButton(
+            TextButton(
               onPressed: () {
-                Navigator.of(context).pushNamed('/useStreamController-page');
+                Navigator.of(context).pushNamed('/useStreamController');
               },
-              child: const Text('UseStreamController Page'),
+              child: const Text('UseStreamController'),
             ),
-            ElevatedButton(
+            TextButton(
               onPressed: () {
-                Navigator.of(context).pushNamed('/useReducer-page');
+                Navigator.of(context).pushNamed('/useReducer');
               },
-              child: const Text('UseReducer Page'),
+              child: const Text('UseReducer'),
             ),
-            ElevatedButton(
+            TextButton(
               onPressed: () {
-                Navigator.of(context).pushNamed('/useAppLifecycleState-page');
+                Navigator.of(context).pushNamed('/useAppLifecycleState');
               },
-              child: const Text('UseAppLifecycleState Page'),
+              child: const Text('UseAppLifecycleState'),
             ),
           ],
         ),
